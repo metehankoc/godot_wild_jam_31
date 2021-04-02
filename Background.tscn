@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/bg/bakkugraoundobfrontk.png" type="Texture" id=1]
+[ext_resource path="res://Background.gd" type="Script" id=2]
+[ext_resource path="res://assets/bg/bakkugraoundobakk.png" type="Texture" id=3]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayerBack" type="ParallaxLayer" parent="."]
+z_index = -2
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 512, 384 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayerBack"]
+z_index = -2
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 384 )
+
+[node name="ParallaxLayerFront" type="ParallaxLayer" parent="."]
+z_index = -1
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 512, 384 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayerFront"]
+z_index = -1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 384 )

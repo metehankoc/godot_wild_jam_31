@@ -1,0 +1,70 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Char.gd" type="Script" id=1]
+[ext_resource path="res://assets/char/finalrun3.png" type="Texture" id=2]
+[ext_resource path="res://assets/char/finalrun4.png" type="Texture" id=3]
+[ext_resource path="res://assets/char/finalrun5.png" type="Texture" id=4]
+[ext_resource path="res://assets/char/finalrun6.png" type="Texture" id=5]
+[ext_resource path="res://musics/jump.wav" type="AudioStream" id=6]
+[ext_resource path="res://Controller.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/char/finalidle2.png" type="Texture" id=10]
+[ext_resource path="res://assets/char/finalidle1.png" type="Texture" id=11]
+[ext_resource path="res://assets/char/finalidle4.png" type="Texture" id=12]
+[ext_resource path="res://assets/char/finalrun7.png" type="Texture" id=13]
+[ext_resource path="res://assets/char/finalrun1.png" type="Texture" id=14]
+[ext_resource path="res://assets/char/finalrun2.png" type="Texture" id=15]
+[ext_resource path="res://assets/char/finalrun8.png" type="Texture" id=16]
+[ext_resource path="res://assets/char/finalidle3.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.4375
+height = 17.125
+
+[node name="Char" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.30615, -0.37373 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.13135, 1.62627 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+offset_v = -1.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
+
+[node name="Controller" parent="." instance=ExtResource( 7 )]
+position = Vector2( -96, 40 )

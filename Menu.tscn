@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/title screen.png" type="Texture" id=3]
+[ext_resource path="res://MainMusic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://musics/menu.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/fonts/Font.tres" type="DynamicFont" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene = "res://Level0.tscn"
+next_scene2 = "res://About.tscn"
+
+[node name="MenuMusic" parent="." instance=ExtResource( 4 )]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 72.0
+margin_top = 126.0
+margin_right = 185.0
+margin_bottom = 145.0
+custom_fonts/font = SubResource( 1 )
+text = "                "
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutButton" type="Button" parent="."]
+margin_left = 72.0
+margin_top = 159.0
+margin_right = 184.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 1 )
+text = "             "
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MuteButton" type="Button" parent="."]
+margin_left = 209.763
+margin_top = 163.315
+margin_right = 246.763
+margin_bottom = 183.315
+custom_fonts/font = ExtResource( 6 )
+text = "mute"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 127, 96 )
+z_index = -1
+texture = ExtResource( 3 )
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_MuteButton_pressed"]

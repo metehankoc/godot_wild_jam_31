@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/spike/spike3.png" type="Texture" id=1]
+[ext_resource path="res://assets/spike/spike2.png" type="Texture" id=2]
+[ext_resource path="res://assets/spike/spike1.png" type="Texture" id=3]
+[ext_resource path="res://assets/spike/spike4.png" type="Texture" id=4]
+[ext_resource path="res://Spike.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "on",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "off",
+"speed": 30.0
+} ]
+
+[node name="Spike" type="Area2D"]
+scale = Vector2( 1, 0.5 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -8 )
+frames = SubResource( 1 )
+animation = "off"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -8 )
+polygon = PoolVector2Array( -8, 24, 8, 24, 0, -24 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Spike_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

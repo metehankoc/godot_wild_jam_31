@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/buttpns.wav-f39e49d0b2e78f3d192289c371c77fb6.sample"
+
+[deps]
+
+source_file="res://musics/buttpns.wav"
+dest_files=[ "res://.import/buttpns.wav-f39e49d0b2e78f3d192289c371c77fb6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

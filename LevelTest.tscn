@@ -1,0 +1,94 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://assets/kekik2.png" type="Texture" id=1]
+[ext_resource path="res://assets/kekik4.png" type="Texture" id=2]
+[ext_resource path="res://assets/kekik6.png" type="Texture" id=3]
+[ext_resource path="res://assets/kekik10.png" type="Texture" id=4]
+[ext_resource path="res://assets/kekik1.png" type="Texture" id=5]
+[ext_resource path="res://assets/kekik3.png" type="Texture" id=6]
+[ext_resource path="res://assets/kekik5.png" type="Texture" id=7]
+[ext_resource path="res://assets/kekik7.png" type="Texture" id=8]
+[ext_resource path="res://assets/kekik8.png" type="Texture" id=9]
+[ext_resource path="res://assets/kekik9.png" type="Texture" id=10]
+[ext_resource path="res://assets/kekik0.png" type="Texture" id=11]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Laser.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=14]
+[ext_resource path="res://MapBoundaries.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Chest.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Char.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Map.tscn" type="PackedScene" id=20]
+[ext_resource path="res://ExitDoor.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Spawner.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Slime.tscn" type="PackedScene" id=24]
+[ext_resource path="res://MainMusic.tscn" type="PackedScene" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="Spawner2" parent="." instance=ExtResource( 23 )]
+position = Vector2( -352, -72 )
+
+[node name="MainMusic" parent="." instance=ExtResource( 25 )]
+volume_db = -15.0
+
+[node name="Char" parent="." instance=ExtResource( 19 )]
+position = Vector2( -176, 48 )
+
+[node name="Map" parent="." instance=ExtResource( 20 )]
+tile_data = PoolIntArray( 65498, 0, 196608, 65499, 0, 196609, 65500, 0, 196609, 65501, 0, 196609, 65502, 0, 196610, 65513, 0, 0, 65514, 0, 1, 65515, 0, 1, 65516, 0, 1, 65517, 0, 2, 10, 0, 0, 11, 0, 2, 131049, 0, 131072, 131050, 0, 131073, 131051, 0, 131073, 131052, 0, 131073, 131053, 0, 131074, 65546, 0, 131072, 65547, 0, 131074, 196566, 0, 196608, 196567, 0, 196609, 196568, 0, 196609, 196569, 0, 196609, 196570, 0, 196610, 196574, 0, 196608, 196575, 0, 196609, 196576, 0, 196609, 196577, 0, 196609, 196578, 0, 196610, 131077, 3, 0, 131078, 3, 2, 196613, 3, 131072, 196614, 3, 131074, 327615, 0, 196608, 327616, 0, 196609, 327617, 0, 196609, 327618, 0, 196609, 327619, 0, 7, 327632, 0, 4, 327633, 0, 196609, 327634, 0, 196609, 327635, 0, 196609, 327636, 0, 196609, 327637, 0, 196609, 327638, 0, 196609, 327639, 0, 196609, 327640, 0, 196609, 327641, 0, 196609, 327642, 0, 196609, 327643, 0, 196609, 327644, 0, 196609, 327645, 0, 196609, 327646, 0, 196609, 327647, 0, 196609, 327648, 0, 196609, 327649, 0, 196609, 327650, 0, 196609, 327651, 0, 196609, 327652, 0, 196609, 327653, 0, 196609, 327654, 0, 196609, 327655, 0, 196609, 327656, 0, 196609, 327657, 0, 196609, 327658, 0, 196609, 327659, 0, 196609, 327660, 0, 196609, 327661, 0, 196609, 327662, 0, 196609, 327663, 0, 196609, 327664, 0, 196609, 327665, 0, 196609, 327666, 0, 196609, 327667, 0, 196609, 327668, 0, 196609, 327669, 0, 196609, 327670, 0, 196609, 327671, 0, 196609, 327672, 0, 196609, 327673, 0, 196610, 327676, 0, 0, 327677, 0, 1, 327678, 0, 1, 327679, 0, 1, 262144, 0, 1, 262145, 0, 2, 262147, 0, 0, 262148, 0, 1, 262149, 0, 1, 262150, 0, 5, 262151, 0, 196609, 262152, 0, 196609, 262153, 0, 6, 262154, 0, 1, 262155, 0, 1, 262156, 0, 1, 262157, 0, 1, 262158, 0, 1, 262159, 0, 2, 393155, 0, 131076, 393156, 0, 2, 393167, 0, 0, 393168, 0, 131079, 393212, 0, 131072, 393213, 0, 131073, 393214, 0, 131073, 393215, 0, 131073, 327680, 0, 65542, 327681, 0, 131077, 327682, 0, 1, 327683, 0, 131078, 327684, 0, 65537, 327685, 0, 65537, 327686, 0, 65538, 327689, 0, 65536, 327690, 0, 65537, 327691, 0, 65537, 327692, 0, 65537, 327693, 0, 65537, 327694, 0, 65537, 327695, 0, 65538, 458691, 0, 131072, 458692, 0, 196613, 458693, 0, 196609, 458694, 0, 196609, 458695, 0, 196609, 458696, 0, 196609, 458697, 0, 196609, 458698, 0, 196609, 458699, 0, 196609, 458700, 0, 196609, 458701, 0, 196609, 458702, 0, 196609, 458703, 0, 196614, 458704, 0, 131074, 393216, 0, 131072, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131073, 393222, 0, 131074, 393225, 0, 131072, 393226, 0, 131073, 393227, 0, 131073, 393228, 0, 131073, 393229, 0, 131073, 393230, 0, 131073, 393231, 0, 131074 )
+
+[node name="MapBoundaries" parent="." instance=ExtResource( 15 )]
+position = Vector2( 0, 192 )
+scale = Vector2( 1.64, 1 )
+level_scene = "res://Level0.tscn"
+
+[node name="ButtenedDoor" type="Node2D" parent="."]
+
+[node name="Button" parent="ButtenedDoor" instance=ExtResource( 12 )]
+position = Vector2( 112, 48 )
+
+[node name="Door" parent="ButtenedDoor" instance=ExtResource( 16 )]
+position = Vector2( 176, 48 )
+
+[node name="ExitDoor" parent="." instance=ExtResource( 21 )]
+position = Vector2( 240, 48 )
+cutscene_file = "res://LevelHub.tscn"
+next_scene = "res://LevelHub.tscn"
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 17 )]
+position = Vector2( 304, 72 )
+
+[node name="Background" parent="." instance=ExtResource( 14 )]
+
+[node name="Spike" parent="." instance=ExtResource( 22 )]
+position = Vector2( 40, 72 )
+
+[node name="Laser" parent="." instance=ExtResource( 13 )]
+position = Vector2( -80, 72 )
+
+[node name="Reward" type="Node2D" parent="."]
+position = Vector2( -8, 0 )
+
+[node name="Chest" parent="Reward" instance=ExtResource( 18 )]
+position = Vector2( 8, 48 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Reward"]
+position = Vector2( -16, 48 )
+frames = SubResource( 1 )
+
+[node name="Spawner" parent="." instance=ExtResource( 23 )]
+position = Vector2( -328, -24 )
+
+[node name="Slime" parent="." instance=ExtResource( 24 )]
+position = Vector2( -865, 88 )

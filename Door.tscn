@@ -1,0 +1,42 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/door/laser3.png" type="Texture" id=1]
+[ext_resource path="res://assets/door/laser7.png" type="Texture" id=2]
+[ext_resource path="res://assets/door/laser2.png" type="Texture" id=3]
+[ext_resource path="res://assets/door/laser5.png" type="Texture" id=4]
+[ext_resource path="res://assets/door/laser6.png" type="Texture" id=5]
+[ext_resource path="res://assets/door/laser1.png" type="Texture" id=6]
+[ext_resource path="res://assets/door/laser4.png" type="Texture" id=7]
+[ext_resource path="res://assets/door/laser9.png" type="Texture" id=8]
+[ext_resource path="res://assets/door/laser10.png" type="Texture" id=9]
+[ext_resource path="res://assets/door/laser8.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "open",
+"speed": 5.0
+} ]
+
+[node name="Door" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "close"
+frame = 3
+playing = true
