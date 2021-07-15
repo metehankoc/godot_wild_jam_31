@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Jam Sm"
+config/name="Carpet-Quest"
 run/main_scene="res://Menu.tscn"
 config/icon="res://assets/icon.png"
 
@@ -73,6 +73,7 @@ ui_down={
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
 quality/2d/use_nvidia_rect_flicker_workaround=true
 quality/2d/use_pixel_snap=true
-environment/default_environment="res://default_env.tres"
